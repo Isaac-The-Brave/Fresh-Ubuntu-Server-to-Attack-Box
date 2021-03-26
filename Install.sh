@@ -36,36 +36,7 @@ echo -e "${GREEN}[*] Essentials installed${NC}"
 
 
 #install go
-if [[ -z "$GOPATH" ]];then
-echo "It looks like go is not installed, would you like to install it now"
-PS3="Please select an option : "
-choices=("yes" "no")
-select choice in "${choices[@]}"; do
-        case $choice in
-                yes)
-
-					echo "Installing Golang"
-					wget https://dl.google.com/go/go1.13.4.linux-amd64.tar.gz
-					sudo tar -xvf go1.13.4.linux-amd64.tar.gz
-					sudo mv go /bin/
-					export GOROOT=/usr/local/go
-					export GOPATH=$HOME/go
-					export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-					echo 'export GOROOT=/usr/local/go' >> ~/.bash_profile
-					echo 'export GOPATH=$HOME/go'	>> ~/.bash_profile			
-					echo 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH' >> ~/.bash_profile	
-					source ~/.bash_profile
-					sleep 1
-					break
-					;;
-				no)
-					echo "Please install go and rerun this script"
-					echo "Aborting installation..."
-					exit 1
-					;;
-	esac	
-done
-fi
+sudo snap install go
 
 # Install Tomnomnomnom's best tools
 
@@ -81,11 +52,36 @@ go get -u github.com/tomnomnom/unfurl
 echo "done"
 
 echo "installing waybackurls"
-go get github.com/tomnomnom/waybackurls
+go get -u github.com/tomnomnom/waybackurls
 echo "done"
 
-echo "installing crtndstry"
-git clone https://github.com/nahamsec/crtndstry.git
+echo "installing ffuf"
+sudo go get -u github.com/ffuf/ffuf 
+echo "done"
+
+# Install Gospider
+echo "installing Gospider"
+go get -u github.com/jaeles-project/gospider
+echo "done"
+
+# amass
+echo -e "${GREEN}[*] Installing amass${NC}"
+export GO111MODULE=on
+go get -v github.com/OWASP/Amass/v3/...
+
+# subfinder
+echo -e "${GREEN}[*] Installing subfinder${NC}"
+go get -v github.com/projectdiscovery/subfinder/cmd/subfinder
+
+#install aquatone
+echo "Installing Aquatone"
+go get github.com/michenriksen/aquatone
+echo "done"
+
+# Move 'go' binaries
+echo "Moving go binaries"
+cd ~/go/bin/
+mv * /bin/
 echo "done"
 
 # Nmap
@@ -204,10 +200,7 @@ cd wafw00f
 chmod +x setup.py 
 python setup.py install
 
-#install aquatone
-echo "Installing Aquatone"
-go get github.com/michenriksen/aquatone
-echo "done"
+
 
 # wpscan
 echo -e "${GREEN}[*] Installing wpscan${NC}"
@@ -290,9 +283,7 @@ echo -e "${GREEN}[*] Installing s3recon${NC}"
 apt-get install -y python3-pip
 pip3 install setuptools pyyaml pymongo requests s3recon
 
-# subfinder
-echo -e "${GREEN}[*] Installing subfinder${NC}"
-go get -v github.com/projectdiscovery/subfinder/cmd/subfinder
+
 
 # whatweb 
 echo -e "${GREEN}[*] Installing whatweb${NC}"
@@ -302,14 +293,20 @@ cd WhatWeb
 chmod +x whatweb
 ln -sf ~/toolkit/WhatWeb/whatweb /bin/whatweb
 
+# crtndstry 
+echo -e "${GREEN}[*] Installing crtndstry${NC}"
+git clone https://github.com/nahamsec/crtndstry.git
+cd crtndstry
+chmod +x crtndstry.sh
+ln -sf ~/toolkit/crtndstry/crtndstry.sh /bin/crtndstry
+pip3 install jq
+echo "done"
+
 # fierce
 echo -e "${GREEN}[*] Installing fierce${NC}"
 python3 -m pip install fierce
 
-# amass
-echo -e "${GREEN}[*] Installing amass${NC}"
-export GO111MODULE=on
-go get -v github.com/OWASP/Amass/v3/...
+
 
 # SecLists
 read -p "Do you want to download SecLists? y/n " -n 1 -r
