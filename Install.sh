@@ -47,7 +47,7 @@ select choice in "${choices[@]}"; do
 					echo "Installing Golang"
 					wget https://dl.google.com/go/go1.13.4.linux-amd64.tar.gz
 					sudo tar -xvf go1.13.4.linux-amd64.tar.gz
-					sudo mv go /usr/local
+					sudo mv go /bin/
 					export GOROOT=/usr/local/go
 					export GOPATH=$HOME/go
 					export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
@@ -99,7 +99,7 @@ apt-get install -y libpcap-dev
 git clone https://github.com/robertdavidgraham/masscan.git
 cd masscan
 make
-ln -sf ~/toolkit/masscan/bin/masscan /usr/local/bin/masscan    
+ln -sf ~/toolkit/masscan/bin/masscan /bin/masscan    
 
 # dnsenum
 echo -e "${GREEN}[*] Installing dnsenum${NC}"
@@ -108,7 +108,7 @@ cd ~/toolkit
 git clone https://github.com/fwaeytens/dnsenum.git 
 cd dnsenum/ 
 chmod +x dnsenum.pl 
-ln -s ~/toolkit/dnsenum/dnsenum.pl /usr/bin/dnsenum 
+ln -s ~/toolkit/dnsenum/dnsenum.pl /bin/dnsenum 
 cpanm String::Random 
 cpanm Net::IP 
 cpanm Net::DNS 
@@ -122,7 +122,7 @@ cd ~/toolkit
 git clone https://github.com/blechschmidt/massdns.git
 cd massdns/
 make
-ln -sf ~/toolkit/massdns/bin/massdns /usr/local/bin/massdns
+ln -sf ~/toolkit/massdns/bin/massdns /bin/massdns
 
 # altdns
 echo -e "${GREEN}[*] Installing altdns${NC}"
@@ -143,7 +143,7 @@ cd ~/toolkit
 git clone https://github.com/aboul3la/Sublist3r.git
 cd Sublist3r/
 pip install -r requirements.txt
-ln -s ~/toolkit/Sublist3r/sublist3r.py /usr/local/bin/sublist3r
+ln -s ~/toolkit/Sublist3r/sublist3r.py /bin/sublist3r
 
 # knock
 echo -e "${GREEN}[*] Installing Knockpy${NC}"
@@ -164,7 +164,7 @@ cd ~/toolkit
 git clone https://github.com/tomdev/teh_s3_bucketeers.git 
 cd teh_s3_bucketeers 
 chmod +x bucketeer.sh 
-ln -sf ~/toolkit/teh_s3_bucketeers/bucketeer.sh /usr/local/bin/bucketeer
+ln -sf ~/toolkit/teh_s3_bucketeers/bucketeer.sh /bin/bucketeer
 
 # Recon-ng
 echo -e "${GREEN}[*] Installing Recon-ng${NC}"
@@ -174,7 +174,7 @@ cd recon-ng
 apt-get install -y python3-pip 
 pip3 install -r REQUIREMENTS 
 chmod +x recon-ng 
-ln -sf ~/toolkit/recon-ng/recon-ng /usr/local/bin/recon-ng
+ln -sf ~/toolkit/recon-ng/recon-ng /bin/recon-ng
 
 # XSStrike
 echo -e "${GREEN}[*] Installing XSStrike${NC}"
@@ -184,7 +184,7 @@ cd XSStrike
 apt-get install -y python3-pip 
 pip3 install -r requirements.txt 
 chmod +x xsstrike.py
-ln -sf ~/toolkit/XSStrike/xsstrike.py /usr/local/bin/xsstrike
+ln -sf ~/toolkit/XSStrike/xsstrike.py /bin/xsstrike
 
 # sqlmap
 echo -e "${GREEN}[*] Installing sqlmap${NC}"
@@ -225,7 +225,7 @@ git clone https://github.com/rezasp/joomscan.git
 cd joomscan/ 
 apt-get install -y libwww-perl 
 chmod +x joomscan.pl
-#ln -sf ~/toolkit/joomscan/joomscan.pl /usr/local/bin/joomscan
+ln -sf ~/toolkit/joomscan/joomscan.pl /bin/joomscan
 
 # commix 
 echo -e "${GREEN}[*] Installing commix${NC}"
@@ -233,7 +233,7 @@ cd ~/toolkit
 git clone https://github.com/commixproject/commix.git 
 cd commix 
 chmod +x commix.py 
-ln -sf ~/toolkit/commix/commix.py /usr/local/bin/commix
+ln -sf ~/toolkit/commix/commix.py /bin/commix
 
 # dnsrecon
 echo -e "${GREEN}[*] Installing dnsrecon${NC}"
@@ -244,7 +244,7 @@ cd ~/toolkit
 git clone https://github.com/AlexisAhmed/virtual-host-discovery.git 
 cd virtual-host-discovery 
 chmod +x scan.rb 
-ln -sf ~/toolkit/virtual-host-discovery/scan.rb /usr/local/bin/virtual-host-discovery
+ln -sf ~/toolkit/virtual-host-discovery/scan.rb /bin/virtual-host-discovery
 
 # theHarvester
 echo -e "${GREEN}[*] Installing theHarvester${NC}"
@@ -254,7 +254,7 @@ cd theHarvester
 apt-get install -y python3.7 
 python3.7 -m pip install -r requirements.txt 
 chmod +x theHarvester.py
-ln -sf ~/toolkit/theHarvester/theHarvester.py /usr/local/bin/theharvester
+ln -sf ~/toolkit/theHarvester/theHarvester.py /bin/theharvester
 
 # CloudFlair
 echo -e "${GREEN}[*] Installing CloudFlair${NC}"
@@ -263,7 +263,7 @@ git clone https://github.com/christophetd/CloudFlair.git
 cd CloudFlair 
 pip install -r requirements.txt 
 chmod +x cloudflair.py 
-ln -sf ~/toolkit/CloudFlair/cloudflair.py /usr/local/bin/cloudflair
+ln -sf ~/toolkit/CloudFlair/cloudflair.py /bin/cloudflair
 
 # bucket_finder
 echo -e "${GREEN}[*] Installing bucket_finder${NC}"
@@ -271,7 +271,7 @@ cd ~/toolkit
 git clone https://github.com/AlexisAhmed/bucket_finder.git 
 cd bucket_finder 
 chmod +x bucket_finder.rb 
-ln -sf ~/toolkit/bucket_finder/bucket_finder.rb /usr/local/bin/bucket_finder
+ln -sf ~/toolkit/bucket_finder/bucket_finder.rb /bin/bucket_finder
 
 # dirsearch
 echo -e "${GREEN}[*] Installing dirsearch${NC}"
@@ -279,7 +279,7 @@ cd ~/toolkit
 git clone https://github.com/AlexisAhmed/dirsearch.git 
 cd dirsearch 
 chmod +x dirsearch.py 
-ln -sf ~/toolkit/dirsearch/dirsearch.py /usr/local/bin/dirsearch
+ln -sf ~/toolkit/dirsearch/dirsearch.py /bin/dirsearch
 
 # gobuster
 echo -e "${GREEN}[*] Installing gobuster${NC}"
@@ -300,7 +300,7 @@ cd ~/toolkit
 git clone https://github.com/urbanadventurer/WhatWeb.git
 cd WhatWeb
 chmod +x whatweb
-ln -sf ~/toolkit/WhatWeb/whatweb /usr/local/bin/whatweb
+ln -sf ~/toolkit/WhatWeb/whatweb /bin/whatweb
 
 # fierce
 echo -e "${GREEN}[*] Installing fierce${NC}"
