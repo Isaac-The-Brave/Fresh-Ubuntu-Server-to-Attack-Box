@@ -1,2 +1,2 @@
 # Fresh-Ubuntu-Server-to-Attack-Box
-A quick script with some of the most important tools for a quick recon on web-apps or networks. 
+A quick script with the tools I like to use for automated bug hunting. This script was made for Ubuntu Server 20.04 
