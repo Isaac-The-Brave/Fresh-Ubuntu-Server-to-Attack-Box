@@ -57,6 +57,13 @@ go get -u github.com/tomnomnom/httprobe
 
 echo "httprobe installed"
 
+# httpx - https://github.com/projectdiscovery/httpx
+echo "installing httpx"
+
+GO111MODULE=on go get -v github.com/projectdiscovery/httpx/cmd/httpx
+
+echo "httpx installed"
+
 # Gospider - https://github.com/jaeles-project/gospider
 echo "installing Gospider"
 
