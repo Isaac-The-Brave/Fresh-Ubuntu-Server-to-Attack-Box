@@ -106,7 +106,9 @@ cd ~/BugBounty/Tools/
 git clone https://github.com/aboul3la/Sublist3r
 cd Sublist3r
 pip3 install -r requirements
-
+git clone https://github.com/rthalley/dnspython
+cd dnspython
+sudo python3 setup.py install
 cd ~
 # Dalfox - https://github.com/hahwul/dalfox​
 echo "Installing dalfox"
@@ -139,4 +141,3 @@ git clone https://github.com/projectdiscovery/nuclei-templates.git
 sudo mv ~/go/bin/* /bin/
 
 echo "Installation finished. Please check ~/BugBounty and ~/Auto-Enum for future reference"
-cd ~ rm -rf Fresh-Ubuntu-Server-to-Attack-Box
