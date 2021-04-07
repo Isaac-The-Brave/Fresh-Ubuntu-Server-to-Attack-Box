@@ -38,6 +38,10 @@ mkdir ~/BugBounty
 mkdir ~/BugBounty/Tools
 
 # Start downloading and installin tools
+# hakrawler - https://github.com/hakluke/hakrawler
+echo "installing hakrawler"
+go get github.com/hakluke/hakrawler
+echo "hakrawler installed"
 
 # ffuf - https://github.com/ffuf/ffuf
 echo "installing ffuf" 
