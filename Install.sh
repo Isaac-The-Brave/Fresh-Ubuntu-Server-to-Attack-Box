@@ -4,8 +4,8 @@
 
 echo "updating and upgrading"
 
-sudo apt-get update
-sudo apt-get upgrade
+sudo apt-get update -y
+sudo apt-get upgrade -y
 
 clear
 # Install necessary official packages
@@ -125,7 +125,7 @@ cd ~
 mkdir .gf
 cd .gf
 git clone https://github.com/Isaac-The-Brave/GF-Patterns-Redux
-mv GF-Patterns-Redux/*.json ..
+mv GF-Patterns-Redux/*.json .
 rm -rf GF-Patterns-Redux
 echo "Installed gf patterns"
 clear
@@ -139,3 +139,4 @@ git clone https://github.com/projectdiscovery/nuclei-templates.git
 sudo mv ~/go/bin/* /bin/
 
 echo "Installation finished. Please check ~/BugBounty and ~/Auto-Enum for future reference"
+cd ~ rm -rf Fresh-Ubuntu-Server-to-Attack-Box
