@@ -118,4 +118,24 @@ echo "dalfox installed"
 # Blind XSS - https://xsshunter.com
 # Requires registration (best to replace this with something more mobile)
 
+#GF-Patterns https://github.com/tomnomnom/gf
+echo "Installing gf patterns"
+go get -u github.com/tomnomnom/gf
+cd ~
+mkdir .gf
+cd .gf
+git clone https://github.com/Isaac-The-Brave/GF-Patterns-Redux
+mv GF-Patterns-Redux/*.json ..
+rm -rf GF-Patterns-Redux
+echo "Installed gf patterns"
+clear
+#Installing Auto-Enum - https://github.com/Isaac-The-Brave/Auto-Enum
+echo "Installing Auto-Enum by Isaac the Brave, this inclues a nuclei templates repo."
+cd ~
+git clone https://github.com/Isaac-The-Brave/Auto-Enum
+cd Auto-Enum
+git clone https://github.com/projectdiscovery/nuclei-templates.git
+
 sudo mv ~/go/bin/* /bin/
+
+echo "Installation finished. Please check ~/BugBounty and ~/Auto-Enum for future reference"
