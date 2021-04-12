@@ -111,6 +111,13 @@ git clone https://github.com/stamparm/DSSS
 cd ~ 
 echo "DSSS installed"
 
+# LFImap - https://github.com/kurobeats/fimap
+echo "Installing fimap" 
+cd ~/BugBounty/Tools/
+git clone https://github.com/kurobeats/fimap.git
+cd ~
+
+echo "Installed fimap"
 # Sublist3r - https://github.com/aboul3la/Sublist3r
 echo "installing Sublist3r" 
 cd ~/BugBounty/Tools/
