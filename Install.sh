@@ -6,7 +6,8 @@ echo "updating and upgrading"
 
 sudo apt-get update -y
 sudo apt-get upgrade -y
-
+sudo add-apt-repository universe
+sudo apt-get update -y
 clear
 # Install necessary official packages
 echo "installing necessary official packages"
@@ -27,9 +28,11 @@ sudo apt-get install -y rename
 sudo apt-get install -y xargs
 sudo apt-get install -y golang
 sudo apt-get install -y python-dnspython
+sudo apt-get install -y python2
 
 clear
-
+echo "Installing Python2 pip"
+curl https://bootstrap.pypa.io/pip/2.7/get-pip.py | sudo python2
 # Ready directories for downloads
 
 echo "Making Directories for downloads"
@@ -99,15 +102,12 @@ wget https://raw.githubusercontent.com/tomnomnom/hacks/master/kxss/main.go
 go build main.go
 rm main.go
 mv main kxss
-
 echo "kxss installed"
 
 # dsss - https://github.com/stamparm/DSSS​
 echo "installing DSSS"
-
 cd ~/BugBounty/Tools/
 git clone https://github.com/stamparm/DSSS
-
 cd ~ 
 echo "DSSS installed"
 
@@ -115,9 +115,10 @@ echo "DSSS installed"
 echo "Installing fimap" 
 cd ~/BugBounty/Tools/
 git clone https://github.com/kurobeats/fimap.git
+pip2 install httplib2
 cd ~
-
 echo "Installed fimap"
+
 # Sublist3r - https://github.com/aboul3la/Sublist3r
 echo "installing Sublist3r" 
 cd ~/BugBounty/Tools/
